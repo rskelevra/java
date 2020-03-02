@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+spec:
+  rules:
+  - host: test.kubelab.space
+    http:
+      paths:
+      - backend:
+          serviceName: spring3hibernate-service
+          servicePort: 9090

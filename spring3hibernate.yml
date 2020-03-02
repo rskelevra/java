@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring3hibernate-deployment
+  labels:
+    name: spring3hibernate-deployment      
+    app: spring3hibernate-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: spring3hibernate-app
+  template:
+    metadata:
+      labels:
+        app: spring3hibernate-app
+    spec:
+      containers:
+      - name: spring3hibernate-app
+        image: rsharm49/spring3hibernate_spring3hibernate.okts.tk_tree_git
+        ports:
+        - containerPort: 9090
+        volumeMounts:
+        - name: mysql-secret
+          mountPath: "/etc/mysql-secret"
+          readOnly: true
+      volumes:
+      - name: mysql-secret 
+        secret:
+          secretName: mysql-secret
