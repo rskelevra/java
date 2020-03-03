@@ -7,11 +7,10 @@ metadata:
     name: mysql-service
     app: spring3hibernate-app
 spec:
-  #type: NodePort
+  type: NodePort
   ports:
   - port: 3306
     targetPort: 3306
   selector:
     app: spring3hibernate-app
     name: mysql-deployment
-  clusterIP: None
