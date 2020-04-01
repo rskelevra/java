@@ -1,4 +1,4 @@
-# Spring3Hibernate - A OpsTree Sample Maven based Java Application
+# Spring3Hibernate - A Sample Maven based Java Application
 
 The main goal of this awesome Java Webapp is to encourage people to dive deep in Java Application Architecture and how we can make delivery pipeline faster, easier and much reliable using **Continous Integration**.
 
@@ -58,7 +58,7 @@ There is some other cool stuff as well but I leave that up to you to explore it.
 Dockerized setup is much classier than manual setup. To achieve this you just have to do this:-
 
 ```shell
-docker build -t opstree/spring3hibernate:latest -f Dockerfile .
+docker build -t sysharma899/spring3hibernate:latest -f Dockerfile .
 ```
 
 That's it. It will create Tomcat Image having the war itself. Now just go and deploy the docker image anywhere you want.
